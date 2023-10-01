@@ -1,21 +1,21 @@
-import Preload from './base_scenes/Preload';
-import Boot from './base_scenes/Boot';
-import Game from './base_scenes/Game';
+import Preload from './base_scenes/Preload'; // Импорт сцены предзагрузки
+import Boot from './base_scenes/Boot'; // Импорт начальной сцены
+import Game from './base_scenes/Game'; // Импорт игровой сцены
 
 export default {
-    type: Phaser.WEBGL,
-    parent: "slot-game-phaser3",
-    width: 1280,
-    height: 720,
-    physics : {
-        default : 'arcade',
+    type: Phaser.WEBGL, // Тип рендерера Phaser
+    parent: "slot-game-phaser3", // ID родительского элемента для игры
+    width: 1280, // Ширина игрового поля
+    height: 720, // Высота игрового поля
+    physics : { // Настройки физики
+        default : 'arcade', // Тип физики по умолчанию
         arcade : {
-            debug : false
+            debug : false // Отключение отладки физики
         }
     },
-    fps : {
-        min: 30,
-        target: 60
+    fps : { // Настройки FPS (кадров в секунду)
+        min: 30, // Минимальное значение FPS
+        target: 60 // Целевое значение FPS
     },
-    scene : [Preload, Boot, Game]
+    scene : [Preload, Boot, Game] // Массив сцен для загрузки
 };

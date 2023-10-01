@@ -1,13 +1,16 @@
 import Config from '../config';
 
+// Сцена завантаження
 export default class PreloadScene extends Phaser.Scene {
     constructor() {
         super({key: 'Preload'});
     }
 
     preload() {
-        //load image
+        // Шлях до ресурсів
         this.load.path = '../../assets/';
+
+        // Завантаження атласів (зображення та їх мапування)
         this.load.atlas('logo', 'images/logo/logo.png', 'images/logo/logo.json');
         this.load.atlas('about', 'images/about/about.png', 'images/about/about.json');
         this.load.atlas('background', 'images/bg/bg.png', 'images/bg/bg.json');
@@ -19,7 +22,8 @@ export default class PreloadScene extends Phaser.Scene {
         this.load.atlas('sound', 'images/sound/sound.png','images/sound/sound.json');
         this.load.atlas('autoSpin', 'images/autoSpin/auto.png','images/autoSpin/auto.json');
         this.load.bitmapFont('txt_bitmap', 'fonts/bitmap/text_slot_machine.png', 'fonts/bitmap/text_slot_machine.xml');
-        //load audio
+
+        // Завантаження аудіо файлів
         this.load.audio('backgroundDefault', 'audio/background-default.mp3');
         this.load.audio('reels', 'audio/reels.mp3');
         this.load.audio('reelStop', 'audio/reel_stop.mp3');
@@ -28,11 +32,13 @@ export default class PreloadScene extends Phaser.Scene {
         this.load.audio('lose', 'audio/lose.mp3');
         this.load.audio('musicDefault', 'audio/music_default.mp3');
 
+        // Створення графічного інтерфейсу завантаження
         this.progressBar = this.add.graphics();
         this.progressBox = this.add.graphics();
         this.progressBox.fillStyle(0x222222, 0.8);
         this.progressBox.fillRect(Config.width / 2 - 460, Config.height / 2 - 90, 900, 50);
-        //load text
+
+        // Створення тексту завантаження
         this.loadingText = this.make.text({
             x: Config.width / 2,
             y: Config.height / 2 - 5,
@@ -43,24 +49,32 @@ export default class PreloadScene extends Phaser.Scene {
             }
         });
         this.loadingText.setOrigin(0.5, 0.5);
+
+        // Прослуховувач прогресу завантаження
         this.load.on('progress', (value) => {
             this.progressBar.clear();
             this.progressBar.fillStyle(0xff00ff, 1);
             this.progressBar.fillRect(Config.width / 2 - 450, Config.height / 2 - 80, 880 * value, 30);
             this.loadingText.setText(parseInt(value * 100) + '%');
         });
+
+        // Прослуховувач завершення завантаження
         this.load.on('complete', this.onComplete, this);
+
+        // Додавання атласів для тестування, можливо, що це тимчасовий код для тестування поведінки завантаження
         for(let i = 0; i < 100; i++) {
             this.load.atlas('background' + i, 'images/bg/bg.png', 'images/bg/bg.json');
         }
     }
 
     create() {
+        // Перехід до наступної сцени після завантаження
         this.scene.start('Boot');
     }
 
-
+    // Викликається при завершенні завантаження
     onComplete() {
+        // Знищення графічних елементів інтерфейсу завантаження
         this.progressBar.destroy();
         this.progressBox.destroy();
         this.loadingText.destroy();

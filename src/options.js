@@ -1,23 +1,23 @@
-//Options
+// Опции
 export default {
-	money: 100000,
-	txtSpin: 'SPIN',
-	txtAutoSpin: 'AUTO',
-	txtAuto : 5,
-	moneyWin: 0,
-	txtMaxBet: 'MAXBET',
-	coin: 10,
-	txtCoin: 'COIN',
-	line: 1,
-	txtLine: 'LINES',
-	txtInfo: 'INFO',
-	win: 0,
-	lineArray: [],
-	result: [],
-	winningLines : [],
-	i: 0,
-	hsv: [],
-	//values symbols0 ==> symbols9
+	money: 100000, // Начальное количество денег
+	txtSpin: 'SPIN', // Текст кнопки "SPIN"
+	txtAutoSpin: 'AUTO', // Текст кнопки "AUTO"
+	txtAuto : 5, // Количество автоматических спинов
+	moneyWin: 0, // Выигрыш
+	txtMaxBet: 'MAXBET', // Текст кнопки "MAXBET"
+	coin: 10, // Значение монеты
+	txtCoin: 'COIN', // Текст кнопки "COIN"
+	line: 1, // Номер линии
+	txtLine: 'LINES', // Текст кнопки "LINES"
+	txtInfo: 'INFO', // Текст кнопки "INFO"
+	win: 0, // Выигрыш
+	lineArray: [], // Массив линий
+	result: [], // Результат
+	winningLines : [], // Выигрышные линии
+	i: 0, // Индекс
+	hsv: [], // Массив для HSV
+	// Значения символов от 0 до 9
 	payvalues: [
 		[100, 150, 200],
 		[50, 100, 150],
@@ -30,7 +30,7 @@ export default {
 		[5, 10, 20],
 		[3, 8, 18]
 	],
-	//max payline 20
+	// Максимальное количество линий - 20
 	payLines: [
 		[[0, 1], [1, 1], [2, 1], [3, 1], [4, 1]], //line 1
 		[[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]], //line 2
@@ -53,8 +53,8 @@ export default {
 		[[0, 2], [1, 2], [2, 0], [3, 2], [4, 2]], //line 19
 		[[0, 0], [1, 2], [2, 2], [3, 2], [4, 0]] //line 20
 	],
-	checkClick: false,
-	symbolHeight: 150,
-	duration: 100,
-	repeat: [5, 10, 15, 20, 25]
+	checkClick: false, // Проверка клика
+	symbolHeight: 150, // Высота символа
+	duration: 100, // Продолжительность
+	repeat: [5, 10, 15, 20, 25] // Повторение
 };
