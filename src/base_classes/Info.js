@@ -15,10 +15,14 @@ export default class Info {
     // Метод для добавления информации
     addInfo() {
         // Создание спрайта для информации
-        this.info = new Sprite(this.scene, Config.width - 1020, Config.height - 50, 'bgButtons', 'btn-info.png');
+        this.info = new Sprite(this.scene, Config.width - 340, Config.height - 28, 'bgButtons', 'btn-info.png');
         // Добавление текста
-        const txtInfo = this.scene.add.dynamicBitmapText(Config.width - 1060, Config.height - 70, 'txt_bitmap', Options.txtInfo, 38);
+        const txtInfo = this.scene.add.dynamicBitmapText(Config.width - 355, Config.height - 35, 'txt_bitmap', Options.txtInfo, 38).setScale(0.4);
         txtInfo.setDisplayCallback(this.scene.textCallback);
+        
+        this.info.setScale(0.4);
+        //this.txtInfo.setScale(0.4);
+        //this.txtInfo.setScale(0.4);
         // Обработчик события нажатия на спрайт
         this.info.on('pointerdown', this.showPayTable, this);
     }
@@ -31,8 +35,8 @@ export default class Info {
             this.showTable(); // Отображаем таблицу
             // Создаем кнопку выхода
             this.btnExit = new Sprite(this.scene, Config.width - 30 , 
-                Config.height - 635, 'bgButtons', 'btn_exit.png').
-                setScale(0.9).setDepth(1);
+                Config.height - 350, 'bgButtons', 'btn_exit.png').
+                setScale(0.4).setDepth(1);
             // Обработчик события нажатия на кнопку выхода
             this.btnExit.on('pointerdown', this.deleteTable, this);
         }
@@ -45,34 +49,34 @@ export default class Info {
         // Создание спрайта для таблицы выплат
         this.paytable = new Sprite(this.scene, Config.width / 2, Config.height / 2,
             'about', 'paytable.png').setDepth(1);
-
-        var width = 190, width2 = width, height = 25, height2 = 245;
+        this.paytable.setScale(0.57);
+        var width = 100, width2 = width, height = 10, height2 = 145;
 
         for(let i = 0; i < Options.payvalues.length; i++) {
             if(i >= 5) {
                 for(let j = 0; j < Options.payvalues[i].length; j++) {
-                    height2 -= 30;
+                    height2 -= 20;
                     // Добавляем значения выплат в массив и на сцену
                     this.payValues.push(this.scene.add.text(width2, Config.height / 2 + height2, Options.payvalues[i][j], {
                         fontSize : '30px',
                         color : '#630066',
                         fontFamily : 'PT Serif'
-                    }).setDepth(1));
+                    }).setDepth(1).setScale(0.5));
                 }
-                width2 += 225;
-                height2 = 245;
+                width2 += 125;
+                height2 = 145;
             } else {
                 for(let j = 0; j < Options.payvalues[i].length; j++) {
-                    height += 30;
+                    height += 20;
                     // Добавляем значения выплат в массив и на сцену
                     this.payValues.push(this.scene.add.text(width, Config.height / 2 - height, Options.payvalues[i][j], {
                         fontSize : '30px',
                         color : '#630066',
                         fontFamily : 'PT Serif'
-                    }).setDepth(1));
+                    }).setDepth(1).setScale(0.5));
                 }
-                width += 225;
-                height = 25;
+                width += 125;
+                height = 10;
             }
         }
     }

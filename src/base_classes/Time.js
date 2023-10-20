@@ -17,7 +17,7 @@ export default class Time {
             color : '#ffffff',
             fontFamily : 'PT Serif'
         });
-
+        
         // Виклик функції обновлення часу
         this.callbackTime();
 

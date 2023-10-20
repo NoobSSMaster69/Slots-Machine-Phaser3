@@ -10,10 +10,10 @@ export default class Container extends Phaser.GameObjects.Container {
         scene.add.existing(this);
 
         // Створення та додавання спрайтів символів до контейнера
-        const symbols1 = scene.add.sprite(0, 0, 'symbols', 'symbols' + this.randomBetween(0, 9) + '.png');
-        const symbols2 = scene.add.sprite(0, - Options.symbolHeight, 'symbols', 'symbols' + this.randomBetween(0, 9) + '.png');
-        const symbols3 = scene.add.sprite(0, - Options.symbolHeight * 2, 'symbols', 'symbols' + this.randomBetween(0, 9) + '.png');
-        const symbols4 = scene.add.sprite(0, - Options.symbolHeight * 3, 'symbols', 'symbols' + this.randomBetween(0, 9) + '.png');
+        const symbols1 = scene.add.sprite(0, 0, 'symbols', 'symbols_' + this.randomBetween(0, 9) + '.png');
+        const symbols2 = scene.add.sprite(0, - Options.symbolHeight, 'symbols', 'symbols_' + this.randomBetween(0, 9) + '.png');
+        const symbols3 = scene.add.sprite(0, - Options.symbolHeight * 2, 'symbols', 'symbols_' + this.randomBetween(0, 9) + '.png');
+        const symbols4 = scene.add.sprite(0, - Options.symbolHeight * 3, 'symbols', 'symbols_' + this.randomBetween(0, 9) + '.png');
         const symbols5 = scene.add.sprite(0, - Options.symbolHeight * 4, 'symbols', 'symbols_' + this.randomBetween(0, 9) + '.png');
 
         // Додавання масиву спрайтів до контейнера

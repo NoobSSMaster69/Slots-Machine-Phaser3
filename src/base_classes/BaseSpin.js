@@ -15,15 +15,16 @@ export default class BaseSpin {
 
     addSpin() {
         // Создание нового спрайта для фона спина
-        this.bgSpin = new Sprite(this.scene, Config.width - 275, Config.height - 50, 'bgButtons', 'btn-spin.png');
+        this.bgSpin = new Sprite(this.scene, Config.width - 273, Config.height - 28, 'bgButtons', 'btn-spin.png');
         
         // Добавление текста спина
-        this.txtSpin = this.scene.add.dynamicBitmapText(Config.width - 315, Config.height - 70, 'txt_bitmap', Options.txtSpin, 38);
+        this.txtSpin = this.scene.add.dynamicBitmapText(Config.width - 290, Config.height - 35, 'txt_bitmap', Options.txtSpin, 38);
         this.txtSpin.setDisplayCallback(this.scene.textCallback);
-        
+        this.bgSpin.setScale(0.4);
+        this.txtSpin.setScale(0.4);
         // Добавление обработчиков событий для спина
         this.bgSpin.on('pointerdown', this.playTweens, this);
-        this.bgSpin.on('pointerup', () => this.bgSpin.setScale(1));
+        this.bgSpin.on('pointerup', () => this.bgSpin.setScale(0.4));
     }
 
     playTweens() {
@@ -36,7 +37,7 @@ export default class BaseSpin {
             this.setColor();
             
             Options.checkClick = true;
-            this.bgSpin.setScale(0.9);
+            this.bgSpin.setScale(0.4);
             
             // Удаление текста выигрыша
             this.removeTextWin();

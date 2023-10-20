@@ -13,7 +13,10 @@ export default class PreloadScene extends Phaser.Scene {
         // Завантаження атласів (зображення та їх мапування)
         this.load.atlas('logo', 'images/logo/logo.png', 'images/logo/logo.json');
         this.load.atlas('about', 'images/about/about.png', 'images/about/about.json');
-        this.load.atlas('background', 'images/bg/bg.png', 'images/bg/bg.json');
+        // this.load.atlas('background', 'images/bg/bg.png', 'images/bg/bg.json');
+        //this.load.atlas('background', 'images/bg/spritesheet.png', 'images/bg/spritesheet.json');
+        this.load.atlas('background', 'images/bg/dimond.png', 'images/bg/dimond.json');
+
         this.load.atlas('bgPreload', 'images/bg/bgmenu.png', 'images/bg/bgmenu.json');
         this.load.atlas('bgButtons', 'images/buttons/button.png', 'images/buttons/button.json');
         this.load.atlas('symbols', 'images/symbols/symbols.png', 'images/symbols/symbols.json');

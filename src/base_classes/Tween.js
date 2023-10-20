@@ -19,7 +19,8 @@ export default class Tween {
                 this.updateTo('y', this.targets[0].y + Options.symbolHeight, true);
                 this.targets[0].first.y = this.targets[0].last.y - Options.symbolHeight;
                 const symbol = this.targets[0].first;
-                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                // symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + 5 + '.png');
                 this.targets[0].moveTo(symbol, 4);
             },
             onComplete: function() {
@@ -62,7 +63,8 @@ export default class Tween {
                 this.updateTo('y', this.targets[0].y + Options.symbolHeight, true);
                 this.targets[0].first.y = this.targets[0].last.y - Options.symbolHeight;
                 const symbol = this.targets[0].first;
-                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                // symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + 5 + '.png');
                 this.targets[0].moveTo(symbol, 4);
             },
             onComplete: function() {
@@ -105,7 +107,8 @@ export default class Tween {
                 this.updateTo('y', this.targets[0].y + Options.symbolHeight, true);
                 this.targets[0].first.y = this.targets[0].last.y - Options.symbolHeight;
                 const symbol = this.targets[0].first;
-                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                // symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + 5 + '.png');
                 this.targets[0].moveTo(symbol, 4);
             },
             onComplete: function() {
@@ -148,7 +151,8 @@ export default class Tween {
                 this.updateTo('y', this.targets[0].y + Options.symbolHeight, true);
                 this.targets[0].first.y = this.targets[0].last.y - Options.symbolHeight;
                 const symbol = this.targets[0].first;
-                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                // symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + 5 + '.png');
                 this.targets[0].moveTo(symbol, 4);
             },
             onComplete: function() {
@@ -191,7 +195,8 @@ export default class Tween {
                 this.updateTo('y', this.targets[0].y + Options.symbolHeight, true);
                 this.targets[0].first.y = this.targets[0].last.y - Options.symbolHeight;
                 const symbol = this.targets[0].first;
-                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                // symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + randomNumber + '.png');
+                symbol.setVisible(true).setTexture('symbols_blur', 'symbols_' + 5 + '.png');
                 this.targets[0].moveTo(symbol, 4);
             },
             onComplete: function () {

@@ -78,6 +78,7 @@ export default class Spin {
                     streak ++;
                 }
             }
+            console.log(streak);
             // Перевірка, чи streak >= 3
             if(streak >= 3) {
                 lineIndx ++;
@@ -104,10 +105,31 @@ export default class Spin {
         }
         for(let i = 0; i < lineArr.length; i++) {
             let lineName = 'payline_' + lineArr[i] + '.png';
-            // Додає спрайт лінії
-            Options.lineArray.push(new Sprite(this.scene, Config.width / 2, 
-                Config.height / 2, 'line', lineName));
+
+            switch (lineArr[i]) {
+                case 1:
+                    Options.lineArray.push(new Sprite(this.scene, Config.width/2, Config.height / 2, 'line', lineName).setScale(1)); //line3
+                    break;
+                case 2:
+                    Options.lineArray.push(new Sprite(this.scene, Config.width/2, Config.height / 2, 'line', lineName).setScale(1)); //line5
+                    break;
+                case 3:
+                    Options.lineArray.push(new Sprite(this.scene, Config.width/2, Config.height / 2 + 100, 'line', lineName).setScale(1));
+                    break;
+                case 4:
+                    Options.lineArray.push(new Sprite(this.scene, Config.width/2, Config.height / 2, 'line', lineName).setScale(1));
+                    break;
+                case 5:
+                    Options.lineArray.push(new Sprite(this.scene, Config.width/2, Config.height / 2, 'line', lineName).setScale(1));
+                    break;
+            }      
+
+            //Додає спрайт лінії
+            // Options.lineArray.push(new Sprite(this.scene, Config.width/2, 
+            //     Config.height / 2, 'line', lineName).setScale(1));
         }
+        console.log(lineArr);
+        console.log(Options.lineArray);
     }
 
     // Метод для обчислення грошей за виграш
@@ -199,15 +221,15 @@ export default class Spin {
         let width = this.setTextWidthWin();
         // Перевірка наявності тексту виграшу
         if (!this.scene.txtWin) {
-            this.scene.txtWin = this.scene.add.text(width, Config.height - 130, 'WIN: ' + Options.moneyWin + ' $ ', {
-                fontSize : '20px',
+            this.scene.txtWin = this.scene.add.text(width + 110, Config.height - 45, 'WIN:\n' + Options.moneyWin + ' $ ', {
+                fontSize : '15px',
                 color : '#25a028',
                 fontFamily : 'PT Serif'
             });
         } else {
             this.scene.txtWin.destroy();
-            this.scene.txtWin = this.scene.add.text(width, Config.height - 130, 'WIN: ' + Options.moneyWin + ' $ ', {
-                fontSize : '20px',
+            this.scene.txtWin = this.scene.add.text(width + 110, Config.height - 45, 'WIN:\n' + Options.moneyWin + ' $ ', {
+                fontSize : '15px',
                 color : '#25a028',
                 fontFamily : 'PT Serif'
             });

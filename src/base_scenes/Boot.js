@@ -16,16 +16,16 @@ export default class BootScene extends Phaser.Scene {
     create() {
         // Объект для масштабирования
         const scaleObject = {
-            default : 1.2,
-            scale : 1.1,
-            scale2 : 1,
-            scale3 : 0.9
+            default : 0.6,
+            scale : 0.5,
+            scale2 : 0.4,
+            scale3 : 0.3
         };
         // Класс Audio
         this.audioObject = new Audio(this); // Создание объекта аудио
         this.audioObject.musicBackgroundDefault.play(); // Воспроизведение фоновой музыки по умолчанию
-        const bgloading = new Sprite(this, Config.width / 2, Config.height / 2, 'bgPreload', 'bg_menu.png'); // Создание спрайта для фонового изображения
-        const title = new Sprite(this, Config.width / 2, Config.height - 500, 
+        const bgloading = new Sprite(this, Config.width / 2, Config.height / 2 , 'bgPreload', 'bg_menu.png').setScale(0.6); // Создание спрайта для фонового изображения
+        const title = new Sprite(this, Config.width / 2, Config.height /2 - 80, 
             'logo', 'logo_game.png').setScale(scaleObject.default); // Создание спрайта для логотипа игры с начальным масштабом
         // Таймер для циклического изменения масштаба логотипа
         const timer = this.time.addEvent({
@@ -43,7 +43,7 @@ export default class BootScene extends Phaser.Scene {
             callbackScope: this, // Контекст вызова функции
             loop: true // Флаг для повторения таймера
         });
-        this.btn = new Sprite(this, Config.width / 2, Config.height - 150, 'bgButtons', 'btn_play.png').setScale(0.9); // Создание спрайта для кнопки игры с начальным масштабом
+        this.btn = new Sprite(this, Config.width / 2, Config.height - 100, 'bgButtons', 'btn_play.png').setScale(0.9); // Создание спрайта для кнопки игры с начальным масштабом
         this.btn.on('pointerdown', () => { // Обработчик события нажатия на кнопку игры
             this.audioObject.musicBackgroundDefault.stop(); // Остановка фоновой музыки по умолчанию
             timer.remove(); // Удаление таймера для логотипа

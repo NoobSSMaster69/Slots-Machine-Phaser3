@@ -5,8 +5,8 @@ import Game from './base_scenes/Game'; // Импорт игровой сцены
 export default {
     type: Phaser.WEBGL, // Тип рендерера Phaser
     parent: "slot-game-phaser3", // ID родительского элемента для игры
-    width: 1280, // Ширина игрового поля
-    height: 720, // Высота игрового поля
+    width: 720, // Ширина игрового поля
+    height: 432, // Высота игрового поля
     physics : { // Настройки физики
         default : 'arcade', // Тип физики по умолчанию
         arcade : {

@@ -27,17 +27,18 @@ export default class GameScene extends Phaser.Scene {
         // Додає фонове зображення
         const bg = new Sprite(this, Config.width / 2, Config.height / 2, 'background', 'bg.jpg');
         // Контейнери
-        this.container = new Container(this, Config.width - 940, Config.height - 90);
-        this.container2 = new Container(this, Config.width - 790, Config.height - 90);
-        this.container3 = new Container(this, Config.width - 640, Config.height - 90);
-        this.container4 = new Container(this, Config.width - 490, Config.height - 90);
-        this.container5 = new Container(this, Config.width - 340, Config.height - 90);
+        this.container = new Container(this, Config.width - 590, Config.height - 70);
+        this.container2 = new Container(this, Config.width - 475, Config.height - 70);
+        this.container3 = new Container(this, Config.width - 360, Config.height - 70);
+        this.container4 = new Container(this, Config.width - 250, Config.height - 70);
+        this.container5 = new Container(this, Config.width - 135, Config.height - 70);
         // Додає зображення машини
         const machine = new Sprite(this, Config.width / 2, Config.height / 2, 'background', 'machine.png');
         // Текст грошей
         this.valueMoney = localStorage.getItem('money') ? localStorage.getItem('money') : Options.money;
-        this.txtMoney = this.add.text(Config.width - 1050, Config.height - 695, this.valueMoney + '$', {
-            fontSize : '30px',
+        // this.valueMoney = Options.money;
+        this.txtMoney = this.add.text(Config.width - 200, Config.height - 405, this.valueMoney + '$', {
+            fontSize : '20px',
             color : '#fff',
             fontFamily : 'PT Serif'
         });
@@ -49,8 +50,8 @@ export default class GameScene extends Phaser.Scene {
         // Додає зображення звуку
         const musicName = localStorage.getItem('music') ? localStorage.getItem('music') : 'btn_music_off.png';
         const soundName = localStorage.getItem('sound') ? localStorage.getItem('sound') : 'btn_sound_off.png';
-        this.btnMusic = new Sprite(this, Config.width - 310, Config.height - 675, 'sound', musicName).setScale(0.6);
-        this.btnSound = new Sprite(this, Config.width - 390, Config.height - 675, 'sound', soundName).setScale(0.6);
+        this.btnMusic = new Sprite(this, Config.width - 140, Config.height - 390, 'sound', musicName).setScale(0.4);
+        this.btnSound = new Sprite(this, Config.width - 90, Config.height - 390, 'sound', soundName).setScale(0.4);
         this.audioMusicName = this.btnMusic.frame.name;
         this.audioSoundName = this.btnSound.frame.name;
         this.btnMusic.on('pointerdown', this.onMusic, this);

@@ -14,34 +14,36 @@ export default class Maxbet {
     // Метод для добавления максимальной ставки
     addMaxbet() {
         // Создание спрайта для максимальной ставки
-        this.maxBet = new Sprite(this.scene, Config.width - 477, Config.height - 50, 'bgButtons', 'btn-maxbet.png');
+        this.maxBet = new Sprite(this.scene, Config.width - 415, Config.height - 28, 'bgButtons', 'btn-maxbet.png');
         // Добавление текста
-        this.txtMaxBet = this.scene.add.dynamicBitmapText(Config.width - 550, Config.height - 70, 'txt_bitmap', Options.txtMaxBet, 38);
+        this.txtMaxBet = this.scene.add.dynamicBitmapText(Config.width - 445, Config.height - 35, 'txt_bitmap', Options.txtMaxBet, 38);
         this.txtMaxBet.setDisplayCallback(this.scene.textCallback);
+        this.maxBet.setScale(0.4);
+        this.txtMaxBet.setScale(0.4);
         // Добавление текста для количества максимальных ставок
-        this.txtCountMaxBet = this.scene.add.text(Config.width - 555, Config.height - 140, 'BET: ' + Options.coin * Options.line, {
-            fontSize : '35px',
+        this.txtCountMaxBet = this.scene.add.text(Config.width - 610, Config.height - 405, Options.coin * Options.line, {
+            fontSize : '15px',
             color : '#fff',
             fontFamily : 'PT Serif'
         });
         // Обработчик события нажатия на спрайт
         this.maxBet.on('pointerdown', this.onMaxbet, this);
         // Обработчик события отпускания кнопки мыши
-        this.maxBet.on('pointerup', () => this.maxBet.setScale(1));
+        this.maxBet.on('pointerup', () => this.maxBet.setScale(0.4));
     }
 
     // Метод для обработки максимальной ставки
     onMaxbet() {
         if (!Options.checkClick && Options.line * Options.coin
             < 1000 && Options.txtAutoSpin === 'AUTO') {
-            this.maxBet.setScale(0.9);
+            this.maxBet.setScale(0.3);
             // Воспроизведение звука кнопки
             this.scene.audioPlayButton();
-            Options.line = 20;
+            Options.line = 5;
             this.scene.btnLine.txtCountLine.setText(Options.line);
             Options.coin = 50;
             this.scene.coin.txtCountCoin.setText(Options.coin);
-            this.txtCountMaxBet.setText('BET: ' + Options.line * Options.coin);
+            this.txtCountMaxBet.setText(Options.line * Options.coin);
         }
     }
 }
